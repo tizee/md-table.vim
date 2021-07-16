@@ -7,3 +7,13 @@ A simple vim plugin that helps generate Markdown table.
 ```
 :MDTable {width} {height}
 ```
+
+```
+:MDTable 4 4
+
+|     |      |      |      |
+| --- |  --- |  --- |  --- |
+|     |      |      |      |
+|     |      |      |      |
+|     |      |      |      |
+```

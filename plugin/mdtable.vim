@@ -23,21 +23,22 @@ function! s:draw_row(cols)
   endfor
   let s:failed = append(line('.'),s:row_line)
 endfunction
+
 function! s:create_table(...)
   let args = a:000
   if len(args) > 2
     echom "Only first two arguments would be used as width and height"
     return
   endif 
-  let [s:width,s:height] = args
-  if s:width <= 0 || s:height <=0
+  let [width,height] = args
+  if width <= 0 || height <=0
    echoe "Invalid width or height"
    return
   endif 
-  for i in range(0, s:height-1)
-     call s:draw_row(s:width-1)
+  for i in range(0, height-2) " does not count head row
+     call s:draw_row(width-1)
   endfor
-  call s:draw_header(s:width-1)
+  call s:draw_header(width-1)
 endfunction
 
 " width x height
